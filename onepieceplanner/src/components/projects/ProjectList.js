@@ -1,5 +1,8 @@
 import React from 'react';
+import {useEffect, useState} from 'react';
 import ProjectSummary from './ProjectSummary';
+import {db} from '../../config/fbConfig';
+import {collection, getDocs} from 'firebase/firestore';
 
 const ProjectList = ({projects}) => {
 	return (
