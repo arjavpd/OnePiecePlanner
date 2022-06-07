@@ -1,8 +1,6 @@
-import {initializeApp} from 'firebase/app';
-import 'firebase/firestore';
-import 'firebase/auth';
+import firebase from 'firebase';
 
-const firebaseConfig = {
+var firebaseConfig = {
 	apiKey: 'AIzaSyAB46S_i2bIvv1l1Gr9xETfayRSAodV0hQ',
 	authDomain: 'onepieceplanner-2668f.firebaseapp.com',
 	projectId: 'onepieceplanner-2668f',
@@ -12,8 +10,8 @@ const firebaseConfig = {
 	measurementId: 'G-76K4SPZ568',
 };
 
-const firebaseApp = initializeApp(firebaseConfig);
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+var db = firebase.firestore();
 
-firebaseApp.firestore().setting({timestampsInSnapshots: true});
-
-export default firebaseApp;
+export default db;

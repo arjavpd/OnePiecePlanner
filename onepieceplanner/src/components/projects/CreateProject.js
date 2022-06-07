@@ -1,50 +1,81 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {createProject} from '../../store/actions/projectActions';
+import db from '../../config/fbConfig';
+import {useState} from 'react';
 
-class CreateProject extends Component {
-	state = {
-		title: '',
-		content: '',
-	};
-	handleChange = e => {
-		this.setState({
-			[e.target.id]: e.target.value,
-		});
-	};
-	handleSubmit = e => {
+const CreateProject = () => {
+	const [authorFirstName, SetFirstName] = useState('');
+	const [authorLastName, SetLastName] = useState('');
+	const [title, SetTitle] = useState('');
+	const [content, SetContent] = useState('');
+	const sub = e => {
 		e.preventDefault();
-		this.props.createProject(this.state);
-	};
-	render() {
-		return (
-			<div className="container">
-				<form className="white" onSubmit={this.handleSubmit}>
-					<h5 className="grey-text text-darken-3">Create Project</h5>
-					<div className="input-field">
-						<label htmlFor="title">Title</label>
-						<input type="text" id="title" onChange={this.handleChange} />
-					</div>
-					<div className="input-field">
-						<label htmlFor="content">Project Content</label>
-						<textarea
-							id="content"
-							className="materialize-textarea"
-							onChange={this.handleChange}></textarea>
-					</div>
-					<div className="input-field">
-						<button className="btn pink lighten-1 z-depth-0">Create</button>
-					</div>
-				</form>
-			</div>
-		);
-	}
-}
 
-const mapDispatchToProps = dispatch => {
-	return {
-		createProject: project => dispatch(createProject(project)),
+		// Add data to the store
+		db.collection('projects')
+			.add({
+				authorFirstName: authorFirstName,
+				authorLastName: authorLastName,
+				content: content,
+				title: title,
+			})
+			.then(docRef => {
+				alert('Project Created!');
+			})
+			.catch(error => {
+				console.error('Oof something went wrong: ', error);
+			});
 	};
+
+	return (
+		<div className="container">
+			<form
+				className="white"
+				onSubmit={event => {
+					sub(event);
+				}}>
+				<h5 className="grey-text text-darken-3">Create Project</h5>
+				<div className="input-field">
+					<label htmlFor="title">First Name</label>
+					<input
+						type="text"
+						id="title"
+						onChange={e => {
+							SetFirstName(e.target.value);
+						}}
+					/>
+				</div>
+				<div className="input-field">
+					<label htmlFor="title">Last Name</label>
+					<input
+						type="text"
+						onChange={e => {
+							SetLastName(e.target.value);
+						}}
+					/>
+				</div>
+				<div className="input-field">
+					<label htmlFor="title">Title</label>
+					<input
+						type="text"
+						onChange={e => {
+							SetTitle(e.target.value);
+						}}
+					/>
+				</div>
+				<div className="input-field">
+					<label htmlFor="title">Content</label>
+					<input
+						type="text"
+						onChange={e => {
+							SetContent(e.target.value);
+						}}
+					/>
+				</div>
+				<button className="btn pink lighten-1 z-depth-0" type="submit">
+					Submit
+				</button>
+			</form>
+		</div>
+	);
 };
 
-export default connect(null, mapDispatchToProps)(CreateProject);
+export default CreateProject;
