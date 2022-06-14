@@ -1,4 +1,5 @@
 import db from '../../config/fbConfig';
+import {register} from './authSetup';
 import {useState} from 'react';
 
 const SignUp = () => {
@@ -6,9 +7,103 @@ const SignUp = () => {
 	const [authorLastName, SetLastName] = useState('');
 	const [email, SetEmail] = useState('');
 	const [password, SetPassword] = useState('');
-	const sub = e => {
+
+	const [form, setForm] = useState({
+		email: '',
+		password: '',
+	});
+	const handleSubmit = async e => {
 		e.preventDefault();
 
+		// Add data to the store
+		db.collection('users')
+			.add({
+				authorFirstName: authorFirstName,
+				authorLastName: authorLastName,
+				email: email,
+				password: password,
+			})
+			.then(docRef => {
+				alert('Account Created!');
+			})
+			.catch(error => {
+				console.error('Oof something went wrong: ', error);
+			});
+		await register(form);
+	};
+
+	return (
+		<div>
+			<div className="container">
+				<form className="white" onSubmit={handleSubmit}>
+					<h5 className="grey-text text-darken-3">Sign Up</h5>
+					<div className="input-field">
+						<label htmlFor="email">Email</label>
+						<input
+							type="text"
+							id="mail"
+							onChange={e => (
+								SetEmail(e.target.value),
+								setForm({...form, email: e.target.value})
+							)}
+						/>
+					</div>
+					<div className="input-field">
+						<label htmlFor="password">
+							Password (must be at least 6 characters)
+						</label>
+						<input
+							type="password"
+							onChange={e => (
+								SetPassword(e.target.value),
+								setForm({...form, password: e.target.value})
+							)}
+						/>
+					</div>
+					<div className="input-field">
+						<label htmlFor="title">First Name</label>
+						<input
+							type="text"
+							id="title"
+							onChange={e => {
+								SetFirstName(e.target.value);
+							}}
+						/>
+					</div>
+					<div className="input-field">
+						<label htmlFor="title">Last Name</label>
+						<input
+							type="text"
+							onChange={e => {
+								SetLastName(e.target.value);
+							}}
+						/>
+					</div>
+					<button className="btn blue lighten-1 z-depth-0" type="reset">
+						Reset
+					</button>
+					<br></br>
+					<br></br>
+					<button className="btn pink lighten-1 z-depth-0" type="submit">
+						Sign Up
+					</button>
+				</form>
+			</div>
+		</div>
+	);
+	/*
+	const [authorFirstName, SetFirstName] = useState('');
+	const [authorLastName, SetLastName] = useState('');
+	const [email, SetEmail] = useState('');
+	const [password, SetPassword] = useState('');
+	const [form, setForm] = useState({
+		email: '',
+		password: '',
+	});
+
+	const sub = e => {
+		e.preventDefault();
+		
 		// Add data to the store
 		db.collection('users')
 			.add({
@@ -53,20 +148,22 @@ const SignUp = () => {
 					/>
 				</div>
 				<div className="input-field">
-					<label htmlFor="title">Email</label>
+					<label htmlFor="email">Email</label>
 					<input
 						type="email"
 						onChange={e => {
 							SetEmail(e.target.value);
+							setForm({...form, email: e.target.value});
 						}}
 					/>
 				</div>
 				<div className="input-field">
-					<label htmlFor="title">Password</label>
+					<label htmlFor="password">Password</label>
 					<input
 						type="password"
 						onChange={e => {
 							SetPassword(e.target.value);
+							setForm({...form, password: e.target.value});
 						}}
 					/>
 				</div>
@@ -76,6 +173,7 @@ const SignUp = () => {
 			</form>
 		</div>
 	);
+	*/
 };
 
 export default SignUp;

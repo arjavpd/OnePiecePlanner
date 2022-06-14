@@ -2,6 +2,7 @@
 import db from '../../config/fbConfig';
 import {useState} from 'react';
 import Notifications from './Notifications';
+import moment from 'moment';
 
 const Dashboard = () => {
 	const [info, setInfo] = useState([]);
@@ -68,6 +69,9 @@ const Frame = ({
 						Posted by {authorFirstName} {authorLastName}
 					</p>
 					<p>Content: {content}</p>
+					<p className="grey-text">
+						{moment(createdAt.toDate().toString()).calendar()}
+					</p>
 				</div>
 			</div>
 		</div>

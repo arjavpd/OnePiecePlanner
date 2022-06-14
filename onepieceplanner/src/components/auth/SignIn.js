@@ -1,39 +1,52 @@
-import React, {Component} from 'react';
+import {useState} from 'react';
+import {login} from './authSetup';
 
-class SignIn extends Component {
-	state = {
+const SignIn = () => {
+	const [form, setForm] = useState({
 		email: '',
 		password: '',
-	};
-	handleChange = e => {
-		this.setState({
-			[e.target.id]: e.target.value,
-		});
-	};
-	handleSubmit = e => {
+	});
+	const handleSubmit = async e => {
 		e.preventDefault();
-		console.log(this.state);
+		setForm('');
+		// Add data to the store
+		await login(form);
 	};
-	render() {
-		return (
+
+	return (
+		<div>
 			<div className="container">
-				<form className="white" onSubmit={this.handleSubmit}>
-					<h5 className="grey-text text-darken-3">Sign In</h5>
+				<form className="white" onSubmit={handleSubmit}>
+					<h5 className="grey-text text-darken-3">Log In</h5>
 					<div className="input-field">
 						<label htmlFor="email">Email</label>
-						<input type="email" id="email" onChange={this.handleChange} />
+						<input
+							type="text"
+							id="mail"
+							onChange={e => setForm({...form, email: e.target.value})}
+						/>
 					</div>
 					<div className="input-field">
-						<label htmlFor="password">Password</label>
-						<input type="password" id="password" onChange={this.handleChange} />
+						<label htmlFor="password">
+							Password (must be at least 6 characters)
+						</label>
+						<input
+							type="password"
+							onChange={e => setForm({...form, password: e.target.value})}
+						/>
 					</div>
-					<div className="input-field">
-						<button className="btn pink lighten-1 z-depth-0">Login</button>
-					</div>
+					<button className="btn blue lighten-1 z-depth-0" type="reset">
+						Reset
+					</button>
+					<br></br>
+					<br></br>
+					<button className="btn pink lighten-1 z-depth-0" type="submit">
+						Log In
+					</button>
 				</form>
 			</div>
-		);
-	}
-}
+		</div>
+	);
+};
 
 export default SignIn;
