@@ -1,11 +1,14 @@
 import db from '../../config/fbConfig';
 import {useState} from 'react';
+import firebase from 'firebase';
+import {auth} from '../../config/fbConfig';
 
 const CreateProject = () => {
 	const [authorFirstName, SetFirstName] = useState('');
 	const [authorLastName, SetLastName] = useState('');
 	const [title, SetTitle] = useState('');
 	const [content, SetContent] = useState('');
+
 	const sub = e => {
 		e.preventDefault();
 
@@ -16,12 +19,13 @@ const CreateProject = () => {
 				authorLastName: authorLastName,
 				content: content,
 				title: title,
+				createdAt: new Date(),
 			})
 			.then(docRef => {
 				alert('Project Created!');
 			})
 			.catch(error => {
-				console.error('Oof something went wrong: ', error);
+				alert('Oof something went wrong: ', error);
 			});
 	};
 
@@ -70,6 +74,11 @@ const CreateProject = () => {
 						}}
 					/>
 				</div>
+				<button className="btn blue lighten-1 z-depth-0" type="reset">
+					Reset
+				</button>
+				<br></br>
+				<br></br>
 				<button className="btn pink lighten-1 z-depth-0" type="submit">
 					Submit
 				</button>
