@@ -1,12 +1,14 @@
 import db from '../../config/fbConfig';
 import {register} from './authSetup';
 import {useState} from 'react';
+import {useNavigate} from 'react-router-dom';
 
 const SignUp = () => {
 	const [authorFirstName, SetFirstName] = useState('');
 	const [authorLastName, SetLastName] = useState('');
 	const [email, SetEmail] = useState('');
 	const [password, SetPassword] = useState('');
+	const navigate = useNavigate();
 
 	const [form, setForm] = useState({
 		email: '',
@@ -14,6 +16,14 @@ const SignUp = () => {
 	});
 	const handleSubmit = async e => {
 		e.preventDefault();
+		const inputs = document.querySelectorAll(
+			'#mail, #password',
+			'#firstName',
+			'#lastName',
+		);
+		inputs.forEach(input => {
+			input.value = '';
+		});
 
 		// Add data to the store
 		db.collection('users')
@@ -30,6 +40,7 @@ const SignUp = () => {
 				console.error('Oof something went wrong: ', error);
 			});
 		await register(form);
+		navigate('/dashin');
 	};
 
 	return (
@@ -54,6 +65,7 @@ const SignUp = () => {
 						</label>
 						<input
 							type="password"
+							id="password"
 							onChange={e => (
 								SetPassword(e.target.value),
 								setForm({...form, password: e.target.value})
@@ -64,7 +76,7 @@ const SignUp = () => {
 						<label htmlFor="title">First Name</label>
 						<input
 							type="text"
-							id="title"
+							id="firstName"
 							onChange={e => {
 								SetFirstName(e.target.value);
 							}}
@@ -74,16 +86,13 @@ const SignUp = () => {
 						<label htmlFor="title">Last Name</label>
 						<input
 							type="text"
+							id="lastName"
 							onChange={e => {
 								SetLastName(e.target.value);
 							}}
 						/>
 					</div>
-					<button className="btn blue lighten-1 z-depth-0" type="reset">
-						Reset
-					</button>
-					<br></br>
-					<br></br>
+
 					<button className="btn pink lighten-1 z-depth-0" type="submit">
 						Sign Up
 					</button>
