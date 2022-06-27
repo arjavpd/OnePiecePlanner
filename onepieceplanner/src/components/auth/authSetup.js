@@ -18,9 +18,6 @@ export const login = async ({email, password}) => {
 /* TODO: Figure document.getElement = null error*/
 if (document.getElementById('logout') != null) {
 	document.getElementById('logout').onclick = function () {
-		auth.signOut().then(() => {
-			console.log('user signed out');
-			<SignedOutLinks />;
-		});
+		auth.signOut().then(() => {});
 	};
 }

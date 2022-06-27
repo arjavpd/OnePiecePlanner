@@ -1,7 +1,9 @@
 import {useState} from 'react';
 import {login} from './authSetup';
+import {useNavigate} from 'react-router-dom';
 
 const SignIn = () => {
+	const navigate = useNavigate();
 	const [form, setForm] = useState({
 		email: '',
 		password: '',
@@ -11,6 +13,11 @@ const SignIn = () => {
 		setForm('');
 		// Add data to the store
 		await login(form);
+		navigate('/dashin');
+		const inputs = document.querySelectorAll('#mail, #password');
+		inputs.forEach(input => {
+			input.value = '';
+		});
 	};
 
 	return (
@@ -32,14 +39,10 @@ const SignIn = () => {
 						</label>
 						<input
 							type="password"
+							id="password"
 							onChange={e => setForm({...form, password: e.target.value})}
 						/>
 					</div>
-					<button className="btn blue lighten-1 z-depth-0" type="reset">
-						Reset
-					</button>
-					<br></br>
-					<br></br>
 					<button className="btn pink lighten-1 z-depth-0" type="submit">
 						Log In
 					</button>

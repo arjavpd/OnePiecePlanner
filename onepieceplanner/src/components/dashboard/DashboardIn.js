@@ -1,17 +1,16 @@
 // Import Firestore database
 import db from '../../config/fbConfig';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import Notifications from './Notifications';
 import moment from 'moment';
+import firebase from 'firebase';
+import SignedInNavbar from '../layout/SignedInNavbar';
+import {Link} from 'react-router-dom';
 
-const Dashboard = () => {
+const DashboardIn = () => {
 	const [info, setInfo] = useState([]);
 
-	// Start the fetch operation as soon as
-	// the page loads
-	window.addEventListener('load', () => {
-		Fetchdata();
-	});
+	console.log('state = unknown (until the callback is invoked)');
 
 	// Fetch the required data using the get() method
 	const Fetchdata = () => {
@@ -26,13 +25,15 @@ const Dashboard = () => {
 				});
 			});
 	};
-
+	useEffect(() => {
+		Fetchdata();
+	}, []);
 	// Display the result on the page
 	return (
 		<div className="dashboard container">
+			<br></br>
 			<div className="row">
 				<div className="col s12 m6 ">
-					<br></br>
 					{info.map(data => (
 						<Frame
 							title={data.title}
@@ -40,6 +41,7 @@ const Dashboard = () => {
 							authorFirstName={data.authorFirstName}
 							authorLastName={data.authorLastName}
 							createdAt={data.createdAt}
+							projectID={data.projectID}
 						/>
 					))}
 				</div>
@@ -58,24 +60,31 @@ const Frame = ({
 	authorFirstName,
 	authorLastName,
 	createdAt,
+	projectID,
 }) => {
-	console.log(createdAt);
+	console.log(projectID);
 	return (
-		<div className="card z-depth-0 project-summary">
+		<Link
+			to={{
+				pathname: '/project/' + projectID,
+			}}
+			state={{test: 'mystate'}}>
 			<div className="card z-depth-0 project-summary">
-				<div className="card-content grey-text text-darken-3">
-					<span className="card-title ">{title}</span>
-					<p>
-						Posted by {authorFirstName} {authorLastName}
-					</p>
-					<p>Content: {content}</p>
-					<p className="grey-text">
-						{moment(createdAt.toDate().toString()).calendar()}
-					</p>
+				<div className="card z-depth-0 project-summary">
+					<div className="card-content grey-text text-darken-3">
+						<span className="card-title ">{title}</span>
+						<p>
+							Posted by {authorFirstName} {authorLastName}
+						</p>
+						<p>Content: {content}</p>
+						<p className="grey-text">
+							{moment(createdAt.toDate().toString()).calendar()}
+						</p>
+					</div>
 				</div>
 			</div>
-		</div>
+		</Link>
 	);
 };
 
-export default Dashboard;
+export default DashboardIn;
