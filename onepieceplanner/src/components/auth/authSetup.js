@@ -1,6 +1,6 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
-import {auth} from '../../config/fbConfig';
+import {auth} from '../../config/fbconfig';
 import SignedOutLinks from '../layout/SignedOutLinks';
 
 export const register = async ({email, password}) => {

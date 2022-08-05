@@ -6,6 +6,7 @@ import ProjectDetails from './components/projects/ProjectDetails';
 import SignIn from './components/auth/SignIn';
 import SignUp from './components/auth/SignUp';
 import CreateProject from './components/projects/CreateProject';
+
 import DashboardIn from './components/dashboard/DashboardIn';
 import DashboardOut from './components/dashboard/DashboardOut';
 import firebase from 'firebase';
@@ -38,6 +39,7 @@ class App extends Component {
 						<Route exact path="/" element={<DashboardOut />} />
 						<Route exact path="/dashin" element={<DashboardIn />} />
 						<Route path="/project/:id" element={<ProjectDetails />} />
+
 						<Route path="/signin" element={<SignIn />} />
 						<Route path="/signUp" element={<SignUp />} />
 						<Route path="/create" element={<CreateProject />} />

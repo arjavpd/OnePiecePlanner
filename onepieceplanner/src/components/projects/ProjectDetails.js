@@ -1,6 +1,6 @@
 import {useParams} from 'react-router-dom';
 import React, {useEffect, useState} from 'react';
-import db from '../../config/fbConfig';
+import db from '../../config/fbconfig';
 import {useLocation} from 'react-router-dom';
 import moment from 'moment';
 

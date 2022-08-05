@@ -1,5 +1,5 @@
 // Import Firestore database
-import db from '../../config/fbConfig';
+import db from '../../config/fbconfig';
 import {useState, useEffect} from 'react';
 import Notifications from './Notifications';
 import moment from 'moment';
@@ -15,6 +15,7 @@ const DashboardIn = () => {
 	// Fetch the required data using the get() method
 	const Fetchdata = () => {
 		db.collection('projects')
+			.orderBy('createdAt', 'desc')
 			.get()
 			.then(querySnapshot => {
 				// Loop through the data and store

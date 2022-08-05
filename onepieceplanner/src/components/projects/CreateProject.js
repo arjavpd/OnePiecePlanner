@@ -1,7 +1,7 @@
-import db from '../../config/fbConfig';
+import db from '../../config/fbconfig';
 import {useState} from 'react';
 import firebase from 'firebase';
-import {auth} from '../../config/fbConfig';
+import {auth} from '../../config/fbconfig';
 
 const CreateProject = () => {
 	//const [authorFirstName, SetFirstName] = useState('');

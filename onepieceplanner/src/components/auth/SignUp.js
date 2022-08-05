@@ -1,4 +1,4 @@
-import db from '../../config/fbConfig';
+import db from '../../config/fbconfig';
 import {register} from './authSetup';
 import {useState} from 'react';
 import {useNavigate} from 'react-router-dom';

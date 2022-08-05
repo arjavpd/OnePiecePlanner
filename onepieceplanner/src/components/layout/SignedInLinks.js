@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import {NavLink, renderMatches, useNavigate} from 'react-router-dom';
-import {auth} from '../../config/fbConfig';
+import {auth} from '../../config/fbconfig';
 import firebase from 'firebase';
 import SignedOutLinks from './SignedOutLinks';
 import SignedInNavbar from './SignedInNavbar';
 import SignedOutNavbar from './SignedOutNavbar';
-import db from '../../config/fbConfig';
+import db from '../../config/fbconfig';
 //import logo from '../../../public/img/background.jpg';
 //			<img width="50" height="50" src={logo} />
 
@@ -81,7 +81,7 @@ const SignedInLinks = () => {
 					<NavLink to="/create">New Project</NavLink>
 				</li>
 				<li className="logged-in">
-					<NavLink to="/dash" onClick={logoutUser}>
+					<NavLink to="/" onClick={logoutUser}>
 						Logout
 					</NavLink>
 				</li>

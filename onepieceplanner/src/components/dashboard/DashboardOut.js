@@ -1,5 +1,5 @@
 // Import Firestore database
-import db from '../../config/fbConfig';
+import db from '../../config/fbconfig';
 import {useState, useEffect, setValue} from 'react';
 import Notifications from './Notifications';
 import moment from 'moment';
@@ -7,10 +7,22 @@ import firebase from 'firebase';
 import SignedInNavbar from '../layout/SignedInNavbar';
 
 const DashboardOut = () => {
+	const imageColumn = {
+		color: 'white',
+		backgroundColor: 'DodgerBlue',
+		padding: '10px',
+	};
 	return (
-		<div>
-			<p>Welcome to One Piece Planner, for all your pirating planning needs!</p>
-			<h2 className="center">Sign up or sign in to get started</h2>
+		<div class="center">
+			<br></br>
+
+			<img
+				src="https://pixy.org/download/573133/"
+				width="300 px"
+				height="270 px"></img>
+			<h4>Created by Arjav Prasad </h4>
+
+			<h4>This app uses ReactJS, Firebase and Materilize CSS</h4>
 		</div>
 	);
 };
