@@ -36,7 +36,7 @@ class App extends Component {
 					{this.state.signedInCheck && <SignedInNavbar />}
 					{this.state.signedInCheck == false && <SignedOutNavbar />}
 					<Routes>
-						<Route exact path="/" element={<DashboardOut />} />
+						<Route exact path="OnePiecePlanner/" element={<DashboardOut />} />
 						<Route
 							exact
 							path="OnePiecePlanner/dashin"

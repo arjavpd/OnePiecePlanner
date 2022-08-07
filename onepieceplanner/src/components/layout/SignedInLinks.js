@@ -73,20 +73,22 @@ const SignedInLinks = () => {
 
 	return (
 		<div>
-			<NavLink to="/dashin" className="brand-logo">
+			<NavLink to="OnePiecePlanner/dashin" className="brand-logo">
 				One Piece Planner
 			</NavLink>
 			<ul className="right">
 				<li class="logged-in">
-					<NavLink to="/create">New Project</NavLink>
+					<NavLink to="OnePiecePlanner/create">New Project</NavLink>
 				</li>
 				<li className="logged-in">
-					<NavLink to="/" onClick={logoutUser}>
+					<NavLink to="OnePiecePlanner/" onClick={logoutUser}>
 						Logout
 					</NavLink>
 				</li>
 				<li class="logged-in">
-					<NavLink to="/dashin" className="btn btn-floating pink lighten-1">
+					<NavLink
+						to="OnePiecePlanner/dashin"
+						className="btn btn-floating pink lighten-1">
 						{initials}
 					</NavLink>
 				</li>

@@ -13,7 +13,7 @@ const SignIn = () => {
 		setForm('');
 		// Add data to the store
 		await login(form);
-		navigate('/dashin');
+		navigate('OnePiecePlanner/dashin');
 		const inputs = document.querySelectorAll('#mail, #password');
 		inputs.forEach(input => {
 			input.value = '';
