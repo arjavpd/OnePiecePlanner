@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/OnePiecePlanner/static/css/main.674fba82.css",
-    "main.js": "/OnePiecePlanner/static/js/main.89968123.js",
+    "main.css": "/OnePiecePlanner/static/css/main.5d3c8fc3.css",
+    "main.js": "/OnePiecePlanner/static/js/main.89a0b76c.js",
     "static/js/787.d606f7f3.chunk.js": "/OnePiecePlanner/static/js/787.d606f7f3.chunk.js",
     "static/media/background.jpg": "/OnePiecePlanner/static/media/background.3f2ca70d19db3c1a8ccf.jpg",
     "index.html": "/OnePiecePlanner/index.html",
-    "main.674fba82.css.map": "/OnePiecePlanner/static/css/main.674fba82.css.map",
-    "main.89968123.js.map": "/OnePiecePlanner/static/js/main.89968123.js.map",
+    "main.5d3c8fc3.css.map": "/OnePiecePlanner/static/css/main.5d3c8fc3.css.map",
+    "main.89a0b76c.js.map": "/OnePiecePlanner/static/js/main.89a0b76c.js.map",
     "787.d606f7f3.chunk.js.map": "/OnePiecePlanner/static/js/787.d606f7f3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.674fba82.css",
-    "static/js/main.89968123.js"
+    "static/css/main.5d3c8fc3.css",
+    "static/js/main.89a0b76c.js"
   ]
 }
