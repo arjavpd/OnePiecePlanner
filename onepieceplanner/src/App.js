@@ -36,20 +36,13 @@ class App extends Component {
 					{this.state.signedInCheck && <SignedInNavbar />}
 					{this.state.signedInCheck == false && <SignedOutNavbar />}
 					<Routes>
-						<Route exact path="OnePiecePlanner/" element={<DashboardOut />} />
-						<Route
-							exact
-							path="OnePiecePlanner/dashin"
-							element={<DashboardIn />}
-						/>
-						<Route
-							path="OnePiecePlanner/project/:id"
-							element={<ProjectDetails />}
-						/>
+						<Route exact path="/OnePiecePlanner" element={<DashboardOut />} />
+						<Route path="/OnePiecePlanner/dashin" element={<DashboardIn />} />
+						<Route path="project/:id" element={<ProjectDetails />} />
 
-						<Route path="OnePiecePlanner/signin" element={<SignIn />} />
-						<Route path="OnePiecePlanner/signUp" element={<SignUp />} />
-						<Route path="OnePiecePlanner/create" element={<CreateProject />} />
+						<Route path="/OnePiecePlanner/signin" element={<SignIn />} />
+						<Route path="/OnePiecePlanner/signUp" element={<SignUp />} />
+						<Route path="/OnePiecePlanner/create" element={<CreateProject />} />
 					</Routes>
 				</div>
 			</BrowserRouter>

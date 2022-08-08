@@ -81,7 +81,7 @@ const SignedInLinks = () => {
 					<NavLink to="OnePiecePlanner/create">New Project</NavLink>
 				</li>
 				<li className="logged-in">
-					<NavLink to="OnePiecePlanner/" onClick={logoutUser}>
+					<NavLink to="/OnePiecePlanner" onClick={logoutUser}>
 						Logout
 					</NavLink>
 				</li>
