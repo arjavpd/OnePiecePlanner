@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/OnePiecePlanner/static/css/main.5d3c8fc3.css",
-    "main.js": "/OnePiecePlanner/static/js/main.38f29f10.js",
+    "main.js": "/OnePiecePlanner/static/js/main.2efeef65.js",
     "static/js/787.d606f7f3.chunk.js": "/OnePiecePlanner/static/js/787.d606f7f3.chunk.js",
     "static/media/background.jpg": "/OnePiecePlanner/static/media/background.3f2ca70d19db3c1a8ccf.jpg",
     "index.html": "/OnePiecePlanner/index.html",
     "main.5d3c8fc3.css.map": "/OnePiecePlanner/static/css/main.5d3c8fc3.css.map",
-    "main.38f29f10.js.map": "/OnePiecePlanner/static/js/main.38f29f10.js.map",
+    "main.2efeef65.js.map": "/OnePiecePlanner/static/js/main.2efeef65.js.map",
     "787.d606f7f3.chunk.js.map": "/OnePiecePlanner/static/js/787.d606f7f3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5d3c8fc3.css",
-    "static/js/main.38f29f10.js"
+    "static/js/main.2efeef65.js"
   ]
 }
