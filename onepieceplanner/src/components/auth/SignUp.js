@@ -40,7 +40,7 @@ const SignUp = () => {
 				console.error('Oof something went wrong: ', error);
 			});
 		await register(form);
-		navigate('OnePiecePlanner/dashin');
+		navigate('/OnePiecePlanner/dashin');
 	};
 
 	return (

@@ -73,21 +73,36 @@ const SignedInLinks = () => {
 
 	return (
 		<div>
+<<<<<<< HEAD
 			<NavLink to="OnePiecePlanner/dashin" className="brand-logo">
+=======
+			<NavLink to="/OnePiecePlanner/dashin" className="brand-logo">
+>>>>>>> gh-pages
 				One Piece Planner
 			</NavLink>
 			<ul className="right">
 				<li class="logged-in">
+<<<<<<< HEAD
 					<NavLink to="OnePiecePlanner/create">New Project</NavLink>
 				</li>
 				<li className="logged-in">
 					<NavLink to="/OnePiecePlanner" onClick={logoutUser}>
+=======
+					<NavLink to="/OnePiecePlanner/create">New Project</NavLink>
+				</li>
+				<li className="logged-in">
+					<NavLink to="/OnePiecePlanner/" onClick={logoutUser}>
+>>>>>>> gh-pages
 						Logout
 					</NavLink>
 				</li>
 				<li class="logged-in">
 					<NavLink
+<<<<<<< HEAD
 						to="OnePiecePlanner/dashin"
+=======
+						to="/OnePiecePlanner/dashin"
+>>>>>>> gh-pages
 						className="btn btn-floating pink lighten-1">
 						{initials}
 					</NavLink>

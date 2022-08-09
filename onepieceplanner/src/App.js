@@ -38,7 +38,7 @@ class App extends Component {
 					<Routes>
 						<Route exact path="/OnePiecePlanner" element={<DashboardOut />} />
 						<Route path="/OnePiecePlanner/dashin" element={<DashboardIn />} />
-						<Route path="project/:id" element={<ProjectDetails />} />
+						<Route path="/project/:id" element={<ProjectDetails />} />
 
 						<Route path="/OnePiecePlanner/signin" element={<SignIn />} />
 						<Route path="/OnePiecePlanner/signUp" element={<SignUp />} />

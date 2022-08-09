@@ -12,7 +12,13 @@ export const register = async ({email, password}) => {
 };
 
 export const login = async ({email, password}) => {
-	const res = await firebase.auth().signInWithEmailAndPassword(email, password);
+	const res = await firebase
+		.auth()
+		.signInWithEmailAndPassword(email, password)
+		.catch(error => {
+			alert('Incorrect Username or Password');
+		});
+	console.log(res.user);
 	return res.user;
 };
 /* TODO: Figure document.getElement = null error*/

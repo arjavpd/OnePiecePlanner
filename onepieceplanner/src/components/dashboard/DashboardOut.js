@@ -20,7 +20,7 @@ const DashboardOut = () => {
 				src="https://pixy.org/download/573133/"
 				width="300 px"
 				height="270 px"></img>
-			<h4>Created by Arjav Prasad </h4>
+			<h4>Created by Arjav Prasad</h4>
 
 			<h4>This app uses ReactJS, Firebase and Materilize CSS</h4>
 		</div>

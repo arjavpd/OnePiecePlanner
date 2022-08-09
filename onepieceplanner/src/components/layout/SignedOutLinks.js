@@ -9,10 +9,10 @@ const SignedOutLinks = () => {
 			</NavLink>
 			<ul className="right">
 				<li>
-					<NavLink to="OnePiecePlanner/signup">Signup</NavLink>
+					<NavLink to="/OnePiecePlanner/signup">Signup</NavLink>
 				</li>
 				<li>
-					<NavLink to="OnePiecePlanner/signin">Login</NavLink>
+					<NavLink to="/OnePiecePlanner/signin">Login</NavLink>
 				</li>
 			</ul>
 		</div>
