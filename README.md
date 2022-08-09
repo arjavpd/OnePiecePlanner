@@ -6,9 +6,7 @@ It is made using ReactJS. It also uses Materlize CSS for styling, Firebase authe
 I used github pages to publish the site. It is how you are able to see the site. I used github extensively through this project for storage and 
 hosting puposes. 
 
-I first created a basic outline and plan for the application (attached below). Then I went to work creating the various components. Finnally I wrapped up with polishing and
-styling. I scoured online for tutorials, guides, and forums whenever I was stuck. By the end of the project, I relized I had become more efficient at finding key 
-information than I was at the beginning.
+I first created a basic outline and plan for the application (attached below). Then I went to work creating the various components. I had no prior experiance coding with ReactJS, so the learning curve was quite steep. It took some time, but eventually I was able to get a hang of it. I scoured online for tutorials, guides, and forums whenever I was stuck. By the end of the project, I relized I had become more efficient at finding key information than I was at the beginning.
 
 I really enjoyed making this application. I have learned a lot and am excited to learn new things by taking on new projects. 
 
