@@ -1,4 +1,4 @@
-Hello My name is Arjav Praasad. This is the One Piece Planner. Users can create an account and create projects. What a great way to stay organized!
+Hello My name is Arjav Prasad. This is the One Piece Planner. Users can create an account and create projects. What a great way to stay organized!
 This Web App is themed around the popular manga "One Piece" of which I am a big fan! https://arjavpd.github.io/OnePiecePlanner
 
 It is made using ReactJS. It also uses Materlize CSS for styling, Firebase authentication for sign-up/sign-in and Firestore database for back-end storage.
